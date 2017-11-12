@@ -1,0 +1,12 @@
+Index: b/ld/ldmain.c
+===================================================================
+--- a/ld/ldmain.c
++++ b/ld/ldmain.c
+@@ -278,6 +278,7 @@ main (int argc, char **argv)
+      interface by default.  */
+   demangling = getenv ("COLLECT_NO_DEMANGLE") == NULL;
+ 
++  link_info.emitrelocations = TRUE;
+   link_info.allow_undefined_version = TRUE;
+   link_info.keep_memory = TRUE;
+   link_info.combreloc = TRUE;

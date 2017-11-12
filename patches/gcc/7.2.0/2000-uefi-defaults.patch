@@ -1,0 +1,20 @@
+Index: b/gcc/config/arm/arm.h
+===================================================================
+--- a/gcc/config/arm/arm.h
++++ b/gcc/config/arm/arm.h
+@@ -340,13 +340,12 @@ extern int arm_fpu_attr;
+ #endif
+ 
+ #ifndef ARM_DEFAULT_ABI
+-#define ARM_DEFAULT_ABI ARM_ABI_APCS
++#define ARM_DEFAULT_ABI ARM_ABI_AAPCS
+ #endif
+ 
+ /* AAPCS based ABIs use short enums by default.  */
+ #ifndef ARM_DEFAULT_SHORT_ENUMS
+-#define ARM_DEFAULT_SHORT_ENUMS \
+-  (TARGET_AAPCS_BASED && arm_abi != ARM_ABI_AAPCS_LINUX)
++#define ARM_DEFAULT_SHORT_ENUMS false
+ #endif
+ 
+ /* Map each of the micro-architecture variants to their corresponding
