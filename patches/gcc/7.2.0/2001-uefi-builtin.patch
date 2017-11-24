@@ -1,0 +1,12 @@
+Index: b/gcc/config/arm/arm-c.c
+===================================================================
+--- a/gcc/config/arm/arm-c.c
++++ b/gcc/config/arm/arm-c.c
+@@ -110,6 +110,7 @@ arm_cpu_builtins (struct cpp_reader* pfile)
+   /* Define __arm__ even when in thumb mode, for
+      consistency with armcc.  */
+   builtin_define ("__arm__");
++  builtin_define ("__uefi__");
+   if (TARGET_ARM_ARCH)
+     builtin_define_with_int_value ("__ARM_ARCH", TARGET_ARM_ARCH);
+   if (arm_arch_notm)
