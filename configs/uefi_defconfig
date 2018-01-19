@@ -9,6 +9,7 @@ CT_ARCH_ARCH="armv7-a"
 CT_ARCH_FPU="neon"
 CT_ARCH_FLOAT_SOFTFP=y
 CT_TARGET_CFLAGS="-fno-short-enums"
+CT_TARGET_VENDOR="uefi"
 CT_NEWLIB_SRC_DEVEL=y
 CT_NEWLIB_DEVEL_URL="git://github.com/efidroid/newlib.git"
 CT_NEWLIB_DEVEL_BRANCH="master"
