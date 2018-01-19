@@ -1,0 +1,14 @@
+Index: b/gcc/config/i386/i386.c
+===================================================================
+--- a/gcc/config/i386/i386.c
++++ b/gcc/config/i386/i386.c
+@@ -5863,6 +5863,9 @@ ix86_option_override_internal (bool main_args_p,
+ 		 main_args_p
+ 		 ? G_("%<-mrtd%> is ignored in 64bit mode")
+ 		 : G_("%<target(\"rtd\")%> is ignored in 64bit mode"));
++
++      if (!(opts_set->x_target_flags & MASK_NO_RED_ZONE))
++        opts->x_target_flags |= MASK_NO_RED_ZONE;
+     }
+   else
+     {
