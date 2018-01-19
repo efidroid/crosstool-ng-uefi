@@ -1,12 +1,13 @@
-Index: b/gcc/config/arm/arm-c.c
+Index: b/gcc/c-family/c-cppbuiltin.c
 ===================================================================
---- a/gcc/config/arm/arm-c.c
-+++ b/gcc/config/arm/arm-c.c
-@@ -110,6 +110,7 @@ arm_cpu_builtins (struct cpp_reader* pfile)
-   /* Define __arm__ even when in thumb mode, for
-      consistency with armcc.  */
-   builtin_define ("__arm__");
+--- a/gcc/c-family/c-cppbuiltin.c
++++ b/gcc/c-family/c-cppbuiltin.c
+@@ -1408,6 +1408,8 @@ c_cpp_builtins (cpp_reader *pfile)
+   TARGET_OS_CPP_BUILTINS ();
+   TARGET_OBJFMT_CPP_BUILTINS ();
+ 
 +  builtin_define ("__uefi__");
-   if (TARGET_ARM_ARCH)
-     builtin_define_with_int_value ("__ARM_ARCH", TARGET_ARM_ARCH);
-   if (arm_arch_notm)
++
+   /* Support the __declspec keyword by turning them into attributes.
+      Note that the current way we do this may result in a collision
+      with predefined attributes later on.  This can be solved by using
