@@ -1,0 +1,12 @@
+diff --git a/gcc/config/i386/i386-c.c b/gcc/config/i386/i386-c.c
+index 9a79a21..64a1c37 100644
+--- a/gcc/config/i386/i386-c.c
++++ b/gcc/config/i386/i386-c.c
+@@ -566,6 +566,7 @@ ix86_target_macros (void)
+       cpp_define (parse_in, "__amd64__");
+       cpp_define (parse_in, "__x86_64");
+       cpp_define (parse_in, "__x86_64__");
++      cpp_define (parse_in, "EFIAPI=__attribute__((ms_abi))");
+       if (TARGET_X32)
+ 	{
+ 	  cpp_define (parse_in, "_ILP32");
