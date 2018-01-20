@@ -1,0 +1,13 @@
+diff --git a/ld/ldmain.c b/ld/ldmain.c
+index ee5ab11..f4a88e0 100644
+--- a/ld/ldmain.c
++++ b/ld/ldmain.c
+@@ -301,6 +302,8 @@ main (int argc, char **argv)
+ #ifdef DEFAULT_NEW_DTAGS
+   link_info.new_dtags = DEFAULT_NEW_DTAGS;
+ #endif
++  if (!strcmp(TARGET, "x86_64-uefi-elf"))
++    link_info.type = type_pie;
+ 
+   ldfile_add_arch ("");
+   emulation = get_emulation (argc, argv);
