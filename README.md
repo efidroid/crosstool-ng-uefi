@@ -1,5 +1,7 @@
 # crosstool-ng project for UEFI
 
+You'll have to use the latest master branch version of crosstool-ng. on Arch linux you can install `crosstool-ng-git` from the AUR, on other distros you'll have to clone, make and make install it according to the official instructions.
+
 ## Configure:
 ```
 ct-ng defconfig DEFCONFIG=configs/uefi_[GCCARCH]_defconfig
